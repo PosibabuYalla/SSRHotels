@@ -1,5 +1,23 @@
 import { Link } from 'react-router-dom';
-import { MapPin, Phone, Mail, Instagram, Facebook, Twitter } from 'lucide-react';
+import { MapPin, Phone, Mail } from 'lucide-react';
+
+const IconInstagram = () => (
+  <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+    <circle cx="12" cy="12" r="4"/>
+    <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+  </svg>
+);
+const IconFacebook = () => (
+  <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+  </svg>
+);
+const IconX = () => (
+  <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.737-8.835L2.25 2.25h6.988l4.26 5.632zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+  </svg>
+);
 
 export default function Footer({ property }) {
   const isPrime = property === 'prime';
@@ -40,9 +58,9 @@ export default function Footer({ property }) {
           </p>
           <div style={{ display: 'flex', gap: '0.75rem', marginTop: '0.25rem' }}>
             {[
-              { href: 'https://instagram.com', icon: <Instagram size={17} /> },
-              { href: 'https://facebook.com',  icon: <Facebook  size={17} /> },
-              { href: 'https://twitter.com',   icon: <Twitter   size={17} /> },
+                        { href: 'https://instagram.com', icon: <IconInstagram /> },
+              { href: 'https://facebook.com',  icon: <IconFacebook  /> },
+              { href: 'https://twitter.com',   icon: <IconX   /> },
             ].map(({ href, icon }) => (
               <a key={href} href={href} target="_blank" rel="noopener noreferrer"
                 style={{ color: mutedColor, transition: 'color 0.2s', display: 'flex', alignItems: 'center' }}
