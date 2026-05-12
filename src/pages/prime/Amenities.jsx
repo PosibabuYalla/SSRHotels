@@ -22,19 +22,20 @@ const fadeUp = { hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0 } };
 
 export default function PrimeAmenities() {
   return (
-    <section style={{ padding: 'clamp(3rem, 6vw, 5rem) clamp(1.5rem, 5vw, 4rem)', maxWidth: '1100px', margin: '0 auto' }}>
-      <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} transition={{ duration: 0.5 }}
-        style={{ textAlign: 'center', marginBottom: '3rem' }}>
-        <span style={{ color: accent, fontSize: '0.8rem', letterSpacing: '0.12em', fontWeight: 600 }}>FACILITIES</span>
-        <h1 style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: 'clamp(2rem, 4vw, 3rem)', color: text, marginTop: '0.5rem' }}>
-          Amenities
-        </h1>
-        <p style={{ color: muted, maxWidth: '500px', margin: '0.75rem auto 0', fontSize: '0.93rem', lineHeight: 1.7 }}>
+    <div>
+      {/* Hero banner */}
+      <section style={{ position: 'relative', height: '40vh', minHeight: '240px', overflow: 'hidden' }}>
+        <img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=1600&q=80" alt="Prime amenities" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }} />
+        <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(10,18,40,0.85) 0%, rgba(10,18,40,0.4) 100%)' }} />
+        <div style={{ position: 'absolute', inset: 0, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+          <h1 style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: 'clamp(2.5rem,6vw,4rem)', color: '#fff', fontWeight: 600 }}>Amenities</h1>
+        </div>
+      </section>
+      <section style={{ padding: 'clamp(3rem, 6vw, 5rem) clamp(1.5rem, 5vw, 4rem)', maxWidth: '1100px', margin: '0 auto' }}>
+        <p style={{ color: muted, maxWidth: '500px', margin: '0 auto 3rem', fontSize: '0.93rem', lineHeight: 1.7, textAlign: 'center' }}>
           Premium facilities designed for an exceptional stay experience.
         </p>
-      </motion.div>
-
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '1.5rem' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '1.5rem' }}>
         {amenities.map(({ icon, title, desc }, i) => (
           <motion.article key={title}
             initial="hidden" whileInView="visible" viewport={{ once: true }}
@@ -49,7 +50,8 @@ export default function PrimeAmenities() {
             <p style={{ color: muted, fontSize: '0.85rem', lineHeight: 1.6 }}>{desc}</p>
           </motion.article>
         ))}
-      </div>
-    </section>
+        </div>
+      </section>
+    </div>
   );
 }

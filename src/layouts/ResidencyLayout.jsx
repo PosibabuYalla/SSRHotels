@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Outlet, NavLink, Link } from 'react-router-dom';
 import { Menu, X, Phone } from 'lucide-react';
 import BookingDrawer from '../components/BookingDrawer';
+import Footer from '../components/Footer';
 
 const navLinks = [
   { to: '/residency', label: 'Home' },
@@ -97,12 +98,7 @@ export default function ResidencyLayout() {
         <Outlet context={{ openBooking: () => setDrawerOpen(true) }} />
       </main>
 
-      <footer style={{
-        background: 'hsl(20, 10%, 15%)', color: 'rgba(255,255,255,0.6)',
-        textAlign: 'center', padding: '1.5rem', fontSize: '0.85rem'
-      }}>
-        © {new Date().getFullYear()} SSR Residency, Machilipatnam. All rights reserved.
-      </footer>
+      <Footer property="residency" />
 
       {/* Floating phone FAB (mobile) */}
       <a href="tel:+919584848666" aria-label="Call SSR Residency"

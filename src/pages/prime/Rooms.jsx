@@ -8,10 +8,10 @@ const muted = 'hsl(213, 20%, 50%)';
 const border = 'rgba(100,116,139,0.3)';
 const fadeUp = { hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0 } };
 
-const roomGradients = [
-  'linear-gradient(135deg, hsl(222,50%,10%) 0%, hsl(215,45%,18%) 50%, hsl(210,55%,10%) 100%)',
-  'linear-gradient(135deg, hsl(218,48%,9%) 0%, hsl(212,42%,16%) 50%, hsl(220,52%,9%) 100%)',
-  'linear-gradient(135deg, hsl(225,52%,11%) 0%, hsl(218,46%,19%) 50%, hsl(215,50%,11%) 100%)',
+const roomImages = [
+  'https://images.unsplash.com/photo-1631049307264-da0ec9d70304?auto=format&fit=crop&w=900&q=80',
+  'https://images.unsplash.com/photo-1618773928121-c32242e63f39?auto=format&fit=crop&w=900&q=80',
+  'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=900&q=80',
 ];
 
 const rooms = [
@@ -36,8 +36,8 @@ export default function PrimeRooms() {
           <motion.article key={room.name} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} transition={{ duration: 0.6 }}
             style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2.5rem', alignItems: 'center', direction: i % 2 === 1 ? 'rtl' : 'ltr' }}>
             <div style={{ direction: 'ltr' }}>
-              <div style={{ width: '100%', aspectRatio: '4/3', borderRadius: '1rem', overflow: 'hidden', border: `1px solid ${border}`, background: roomGradients[i], display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                <span style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: '1.5rem', color: 'rgba(203,213,225,0.4)', fontStyle: 'italic', textAlign: 'center', padding: '1rem' }}>{room.name}</span>
+              <div style={{ width: '100%', aspectRatio: '4/3', borderRadius: '1rem', overflow: 'hidden', border: `1px solid ${border}` }}>
+                <img src={roomImages[i]} alt={room.name} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
               </div>
             </div>
             <div style={{ direction: 'ltr', display: 'flex', flexDirection: 'column', gap: '1rem' }}>

@@ -14,14 +14,12 @@ export default function PrimeHome() {
   return (
     <div>
       <section style={{ position: 'relative', height: '85vh', minHeight: '500px', overflow: 'hidden' }}>
-        <div className="ken-burns" style={{
-          position: 'absolute', inset: 0,
-          background: 'linear-gradient(135deg, hsl(222,50%,8%) 0%, hsl(215,45%,16%) 40%, hsl(225,40%,12%) 70%, hsl(210,55%,8%) 100%)',
-        }} />
-        <div style={{
-          position: 'absolute', inset: 0,
-          backgroundImage: 'radial-gradient(ellipse at 70% 30%, rgba(100,140,200,0.25) 0%, transparent 55%), radial-gradient(ellipse at 20% 75%, rgba(60,100,180,0.2) 0%, transparent 50%)',
-        }} />
+        <img
+          src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1600&q=80"
+          alt="SSR Prime hotel exterior"
+          className="ken-burns"
+          style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center' }}
+        />
         <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.1) 60%, transparent 100%)' }} />
         <div style={{ position: 'absolute', bottom: '4rem', left: '50%', transform: 'translateX(-50%)', textAlign: 'center', width: '90%', maxWidth: '700px' }}>
           <motion.div initial="hidden" animate="visible" variants={fadeUp} transition={{ duration: 0.7 }}>
@@ -52,8 +50,8 @@ export default function PrimeHome() {
       <section style={{ padding: 'clamp(3rem, 6vw, 5rem) clamp(1.5rem, 5vw, 4rem)', maxWidth: '1100px', margin: '0 auto' }}>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '3rem', alignItems: 'center' }}>
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} transition={{ duration: 0.6 }}>
-            <div style={{ width: '100%', aspectRatio: '4/3', borderRadius: '1rem', overflow: 'hidden', border: `1px solid ${border}`, background: 'linear-gradient(135deg, hsl(222,50%,10%) 0%, hsl(215,45%,18%) 50%, hsl(210,55%,10%) 100%)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-              <span style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: '2rem', color: 'rgba(203,213,225,0.35)', fontStyle: 'italic' }}>Our Suites</span>
+            <div style={{ width: '100%', aspectRatio: '4/3', borderRadius: '1rem', overflow: 'hidden', border: `1px solid ${border}` }}>
+              <img src="https://images.unsplash.com/photo-1631049552057-403cdb8f0658?auto=format&fit=crop&w=900&q=80" alt="Prime suite interior" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
             </div>
           </motion.div>
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} transition={{ duration: 0.6, delay: 0.15 }} style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>

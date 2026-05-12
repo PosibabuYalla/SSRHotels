@@ -7,10 +7,10 @@ const text = 'hsl(20, 10%, 15%)';
 const muted = 'hsl(20, 5%, 45%)';
 const fadeUp = { hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0 } };
 
-const roomGradients = [
-  'linear-gradient(135deg, hsl(20,35%,22%) 0%, hsl(12,50%,32%) 50%, hsl(25,40%,18%) 100%)',
-  'linear-gradient(135deg, hsl(15,40%,18%) 0%, hsl(10,55%,28%) 50%, hsl(20,35%,14%) 100%)',
-  'linear-gradient(135deg, hsl(25,38%,20%) 0%, hsl(15,48%,30%) 50%, hsl(18,42%,16%) 100%)',
+const roomImages = [
+  'https://images.unsplash.com/photo-1631049307264-da0ec9d70304?auto=format&fit=crop&w=900&q=80',
+  'https://images.unsplash.com/photo-1616594039964-ae9021a400a0?auto=format&fit=crop&w=900&q=80',
+  'https://images.unsplash.com/photo-1598928506311-c55ded91a20c?auto=format&fit=crop&w=900&q=80',
 ];
 
 const rooms = [
@@ -35,8 +35,8 @@ export default function ResidencyRooms() {
           <motion.article key={room.name} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} transition={{ duration: 0.6 }}
             style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2.5rem', alignItems: 'center', direction: i % 2 === 1 ? 'rtl' : 'ltr' }}>
             <div style={{ direction: 'ltr' }}>
-              <div style={{ width: '100%', aspectRatio: '4/3', borderRadius: '1rem', overflow: 'hidden', background: roomGradients[i], display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                <span style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: '1.5rem', color: 'rgba(255,255,255,0.5)', fontStyle: 'italic', textAlign: 'center', padding: '1rem' }}>{room.name}</span>
+              <div style={{ width: '100%', aspectRatio: '4/3', borderRadius: '1rem', overflow: 'hidden' }}>
+                <img src={roomImages[i]} alt={room.name} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
               </div>
             </div>
             <div style={{ direction: 'ltr', display: 'flex', flexDirection: 'column', gap: '1rem' }}>

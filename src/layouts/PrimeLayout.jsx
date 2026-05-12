@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Outlet, NavLink, Link } from 'react-router-dom';
 import { Menu, X, Phone } from 'lucide-react';
 import BookingDrawer from '../components/BookingDrawer';
+import Footer from '../components/Footer';
 
 const navLinks = [
   { to: '/prime', label: 'Home' },
@@ -98,13 +99,7 @@ export default function PrimeLayout() {
         <Outlet context={{ openBooking: () => setDrawerOpen(true) }} />
       </main>
 
-      <footer style={{
-        background: 'rgba(0,0,0,0.4)', borderTop: `1px solid ${border}`,
-        color: 'rgba(255,255,255,0.4)', textAlign: 'center',
-        padding: '1.5rem', fontSize: '0.85rem'
-      }}>
-        © {new Date().getFullYear()} SSR Prime, Machilipatnam. All rights reserved.
-      </footer>
+      <Footer property="prime" />
 
       <a href="tel:+919059695599" aria-label="Call SSR Prime"
         style={{

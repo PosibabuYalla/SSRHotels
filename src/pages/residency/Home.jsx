@@ -14,14 +14,12 @@ export default function ResidencyHome() {
     <div>
       {/* Hero */}
       <section style={{ position: 'relative', height: '85vh', minHeight: '500px', overflow: 'hidden' }}>
-        <div className="ken-burns" style={{
-          position: 'absolute', inset: 0,
-          background: 'linear-gradient(135deg, hsl(20,40%,18%) 0%, hsl(12,55%,28%) 40%, hsl(30,50%,22%) 70%, hsl(15,45%,12%) 100%)',
-        }} />
-        <div style={{
-          position: 'absolute', inset: 0,
-          backgroundImage: 'radial-gradient(ellipse at 25% 60%, rgba(200,100,50,0.3) 0%, transparent 55%), radial-gradient(ellipse at 75% 30%, rgba(240,160,80,0.15) 0%, transparent 50%)',
-        }} />
+        <img
+          src="https://images.unsplash.com/photo-1564501049412-61c2a3083791?auto=format&fit=crop&w=1600&q=80"
+          alt="SSR Residency hotel"
+          className="ken-burns"
+          style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center' }}
+        />
         <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.15) 60%, transparent 100%)' }} />
         <div style={{ position: 'absolute', bottom: '4rem', left: '50%', transform: 'translateX(-50%)', textAlign: 'center', width: '90%', maxWidth: '700px' }}>
           <motion.div initial="hidden" animate="visible" variants={fadeUp} transition={{ duration: 0.7 }}>
@@ -56,8 +54,8 @@ export default function ResidencyHome() {
       <section style={{ padding: 'clamp(3rem, 6vw, 5rem) clamp(1.5rem, 5vw, 4rem)', maxWidth: '1100px', margin: '0 auto' }}>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '3rem', alignItems: 'center' }}>
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} transition={{ duration: 0.6 }}>
-            <div style={{ width: '100%', aspectRatio: '4/3', borderRadius: '1rem', overflow: 'hidden', background: 'linear-gradient(135deg, hsl(20,35%,22%) 0%, hsl(12,50%,32%) 50%, hsl(25,40%,18%) 100%)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-              <span style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: '2rem', color: 'rgba(255,255,255,0.4)', fontStyle: 'italic' }}>Our Rooms</span>
+            <div style={{ width: '100%', aspectRatio: '4/3', borderRadius: '1rem', overflow: 'hidden' }}>
+              <img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?auto=format&fit=crop&w=900&q=80" alt="Residency room" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
             </div>
           </motion.div>
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} transition={{ duration: 0.6, delay: 0.15 }} style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>

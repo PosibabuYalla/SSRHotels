@@ -36,15 +36,15 @@ export default function ResidencyContact() {
 
   return (
     <div>
+      {/* Hero banner */}
+      <section style={{ position: 'relative', height: '38vh', minHeight: '220px', overflow: 'hidden' }}>
+        <img src="https://images.unsplash.com/photo-1506059612708-99d6c258160e?auto=format&fit=crop&w=1600&q=80" alt="SSR Residency contact" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }} />
+        <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(20,10,5,0.88) 0%, rgba(20,10,5,0.45) 100%)' }} />
+        <div style={{ position: 'absolute', inset: 0, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+          <h1 style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: 'clamp(2.5rem,6vw,4rem)', color: '#fff', fontWeight: 600 }}>Contact Us</h1>
+        </div>
+      </section>
       <section style={{ padding: 'clamp(3rem, 6vw, 5rem) clamp(1.5rem, 5vw, 4rem)', maxWidth: '1100px', margin: '0 auto' }}>
-        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} transition={{ duration: 0.5 }}
-          style={{ textAlign: 'center', marginBottom: '3rem' }}>
-          <span style={{ color: accent, fontSize: '0.8rem', letterSpacing: '0.12em', fontWeight: 600 }}>GET IN TOUCH</span>
-          <h1 style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: 'clamp(2rem, 4vw, 3rem)', color: text, marginTop: '0.5rem' }}>
-            Contact Us
-          </h1>
-        </motion.div>
-
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '1.5rem' }}>
           {info.map(({ icon, title, lines }, i) => (
             <motion.article key={title}
@@ -65,8 +65,6 @@ export default function ResidencyContact() {
           ))}
         </div>
       </section>
-
-      {/* CTA */}
       <section style={{
         background: accent, padding: 'clamp(3rem, 5vw, 4rem) 2rem',
         textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1.25rem'
