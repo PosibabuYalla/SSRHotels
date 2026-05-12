@@ -155,7 +155,7 @@ function HeroSide({ side, width, onEnter, onLeave, img, fallback, badge, badgeCo
   );
 }
 
-function MobileCard({ img, fallback, badge, badgeColor, title, sub, btn, to, navigate }) {
+function MobileCard({ img, fallback, badge, badgeColor, title, sub, btn, to, navigate, isFirst, isLast }) {
   const [failed, setFailed] = useState(false);
   return (
     <div style={{ flex: 1, position: 'relative', overflow: 'hidden' }}>
@@ -164,7 +164,16 @@ function MobileCard({ img, fallback, badge, badgeColor, title, sub, btn, to, nav
         : <div style={{ position: 'absolute', inset: 0, background: fallback }} />
       }
       <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to right, rgba(0,0,0,0.72) 0%, rgba(0,0,0,0.3) 100%)' }} />
-      <div style={{ position: 'absolute', top: '1.75rem', left: '1.5rem', right: '1.5rem', display: 'flex', flexDirection: 'column' }}>
+      <div style={{
+        position: 'absolute',
+        top: isFirst ? '5.5rem' : '1.75rem',
+        bottom: isLast ? '4rem' : 'auto',
+        left: '1.5rem',
+        right: '1.5rem',
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+      }}>
         <span style={{ color: badgeColor, fontSize: '0.6rem', letterSpacing: '0.18em', fontWeight: 600, fontFamily: 'Inter, sans-serif', marginBottom: '0.75rem', textTransform: 'uppercase' }}>{badge}</span>
         <h2 style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: '2.8rem', fontWeight: 400, color: '#fff', lineHeight: 1, marginBottom: '0.75rem' }}>{title}</h2>
         <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: '0.78rem', lineHeight: 1.6, maxWidth: '220px', fontFamily: 'Inter, sans-serif', marginBottom: '1.25rem' }}>{sub}</p>
@@ -288,8 +297,8 @@ export default function Landing() {
 
       {/* ── Mobile stacked ── */}
       <div className="landing-mobile" style={{ display: 'none', flexDirection: 'column', flex: 1 }}>
-        <MobileCard img={RESIDENCY_IMG} fallback={RES_GRAD} badge="Heritage Collection" badgeColor="hsl(36,90%,68%)" title="SSR Residency" sub="Clean AC rooms in Godugupet, Machilipatnam." btn="Enter Residency" to="/residency" navigate={navigate} />
-        <MobileCard img={PRIME_IMG} fallback={PRIME_GRAD} badge="Premium Collection" badgeColor="rgba(203,213,225,0.85)" title="SSR Prime" sub="Premium rooms near Three Pillars Center." btn="Enter Prime" to="/prime" navigate={navigate} />
+        <MobileCard img={RESIDENCY_IMG} fallback={RES_GRAD} badge="Heritage Collection" badgeColor="hsl(36,90%,68%)" title="SSR Residency" sub="Clean AC rooms in Godugupet, Machilipatnam." btn="Enter Residency" to="/residency" navigate={navigate} isFirst />
+        <MobileCard img={PRIME_IMG} fallback={PRIME_GRAD} badge="Premium Collection" badgeColor="rgba(203,213,225,0.85)" title="SSR Prime" sub="Premium rooms near Three Pillars Center." btn="Enter Prime" to="/prime" navigate={navigate} isLast />
       </div>
 
       {/* ── Bottom explore button ── */}
