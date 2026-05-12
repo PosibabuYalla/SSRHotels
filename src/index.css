@@ -1,0 +1,60 @@
+@import "tailwindcss";
+
+:root {
+  --res-bg:     hsl(36, 33%, 97%);
+  --res-accent: hsl(12, 58%, 34%);
+  --res-text:   hsl(20, 10%, 15%);
+  --res-muted:  hsl(20, 5%, 45%);
+  --prime-bg:   hsl(222, 47%, 11%);
+  --prime-accent: #CBD5E1;
+  --prime-text: #ffffff;
+  --prime-muted: hsl(213, 20%, 50%);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body, #root { height: 100%; }
+
+body {
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  background: #fff;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Cormorant Garamond', serif;
+}
+
+/* Full-bleed background images — override Tailwind's img reset */
+img[aria-hidden="true"] {
+  max-width: none !important;
+  height: 100% !important;
+  width: 100% !important;
+  object-fit: cover;
+  display: block;
+}
+
+@keyframes kenBurns {
+  0%   { transform: scale(1); }
+  100% { transform: scale(1.08); }
+}
+@keyframes pulse-line {
+  0%, 100% { opacity: 0.25; }
+  50%       { opacity: 0.7; }
+}
+
+.ken-burns {
+  animation: kenBurns 22s ease-in-out infinite alternate;
+  transform-origin: center center;
+  will-change: transform;
+}
+.pulse-line {
+  animation: pulse-line 3s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ken-burns, .pulse-line, * {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

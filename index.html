@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="/mainlogo.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="SSR Hospitality — SSR Residency & SSR Prime, luxury hotels in Machilipatnam, Andhra Pradesh." />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+    <!-- Preconnect to Unsplash CDN -->
+    <link rel="preconnect" href="https://images.unsplash.com" crossorigin />
+
+    <!-- Preload hero images so they're ready when React mounts -->
+    <link rel="preload" as="image" href="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?auto=format&fit=crop&w=1200&q=75" fetchpriority="high" />
+    <link rel="preload" as="image" href="https://images.unsplash.com/photo-1631049552057-403cdb8f0658?auto=format&fit=crop&w=1200&q=75" fetchpriority="high" />
+
+    <title>SSR Hospitality — Machilipatnam</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
